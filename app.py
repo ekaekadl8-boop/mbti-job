@@ -1,19 +1,26 @@
 import streamlit as st
 
+# -----------------------------------
+# 기본 설정
+# -----------------------------------
 st.set_page_config(
     page_title="🌈 MBTI 진로 & 포켓몬 추천기",
     page_icon="✨",
     layout="centered"
 )
 
+# -----------------------------------
+# 제목
+# -----------------------------------
 st.title("🌈 MBTI 진로 & 포켓몬 추천기")
-st.markdown("## 😎 너랑 닮은 직업이랑 포켓몬을 찾아보자!")
-st.write("MBTI를 선택하면 ✨ 추천 진로 + 🐾 닮은 포켓몬을 알려줄게!")
+st.markdown("## 😆 나랑 닮은 직업이랑 포켓몬은 뭘까?")
+st.write("MBTI를 선택하면 💼 추천 진로 + 🐾 닮은 포켓몬을 알려줄게!")
 
-# -----------------------------
+# -----------------------------------
 # MBTI 데이터
-# -----------------------------
+# -----------------------------------
 mbti_data = {
+
     "INTJ": {
         "careers": [
             {
@@ -48,9 +55,9 @@ mbti_data = {
             }
         ],
         "pokemon": {
-            "name": "🟡 후딘",
+            "name": "🧠 후딘",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
-            "description": "IQ 높은 천재 포켓몬! 생각 많고 분석적인 INTP 느낌이야 🧠"
+            "description": "IQ 천재 느낌의 포켓몬! 분석왕 INTP랑 완전 잘 어울려 🔍"
         }
     },
 
@@ -70,7 +77,7 @@ mbti_data = {
         "pokemon": {
             "name": "🔥 리자몽",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
-            "description": "카리스마 넘치고 리더 느낌 뿜뿜! ENTJ랑 엄청 잘 어울려 🔥"
+            "description": "카리스마 폭발🔥 리더 기질 넘치는 ENTJ랑 찰떡!"
         }
     },
 
@@ -90,7 +97,7 @@ mbti_data = {
         "pokemon": {
             "name": "⚡ 피카츄",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
-            "description": "에너지 넘치고 장난기 많은 분위기 메이커 ⚡"
+            "description": "에너지 넘치고 장난기 가득! 분위기 메이커 ⚡"
         }
     },
 
@@ -110,7 +117,7 @@ mbti_data = {
         "pokemon": {
             "name": "🌸 가디안",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/282.png",
-            "description": "상대의 마음을 잘 이해하는 다정한 포켓몬 💕"
+            "description": "상대의 마음을 이해하는 따뜻한 포켓몬 💕"
         }
     },
 
@@ -130,7 +137,7 @@ mbti_data = {
         "pokemon": {
             "name": "🌙 이브이",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
-            "description": "가능성이 무한하고 감성적인 포켓몬 ✨"
+            "description": "가능성이 무한한 감성 포켓몬 ✨"
         }
     },
 
@@ -150,7 +157,7 @@ mbti_data = {
         "pokemon": {
             "name": "🦁 루카리오",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/448.png",
-            "description": "정의감 넘치고 사람들을 지켜주는 리더 스타일 😎"
+            "description": "정의감 넘치고 리더 느낌 가득 😎"
         }
     },
 
@@ -170,7 +177,7 @@ mbti_data = {
         "pokemon": {
             "name": "🎈 푸린",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
-            "description": "귀엽고 분위기 띄우는 데 최고인 포켓몬 🎶"
+            "description": "귀엽고 텐션 높은 분위기 메이커 🎶"
         }
     },
 
@@ -190,7 +197,87 @@ mbti_data = {
         "pokemon": {
             "name": "🛡️ 거북왕",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
-            "description": "든든하고 믿음직한 스타일! 책임감 만렙 💪"
+            "description": "든든하고 믿음직한 스타일 💪"
+        }
+    },
+
+    "ISFJ": {
+        "careers": [
+            {
+                "job": "💉 간호사",
+                "major": "간호학과",
+                "personality": "세심하고 배려심 깊은 사람!"
+            },
+            {
+                "job": "🏥 물리치료사",
+                "major": "물리치료학과",
+                "personality": "다른 사람을 돕는 걸 좋아하는 사람!"
+            }
+        ],
+        "pokemon": {
+            "name": "💧 라프라스",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/131.png",
+            "description": "친절하고 따뜻하게 사람들을 챙기는 포켓몬 💙"
+        }
+    },
+
+    "ESTJ": {
+        "careers": [
+            {
+                "job": "📊 공무원",
+                "major": "행정학과",
+                "personality": "체계적이고 리더십 있는 사람!"
+            },
+            {
+                "job": "🏢 관리자",
+                "major": "경영학과",
+                "personality": "조직 관리에 능숙한 사람!"
+            }
+        ],
+        "pokemon": {
+            "name": "🦖 마기라스",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/248.png",
+            "description": "강력하고 책임감 있는 리더 스타일 👑"
+        }
+    },
+
+    "ESFJ": {
+        "careers": [
+            {
+                "job": "🩺 치위생사",
+                "major": "치위생학과",
+                "personality": "친절하고 사람 챙기는 걸 좋아하는 사람!"
+            },
+            {
+                "job": "🎉 행사기획자",
+                "major": "호텔관광학과",
+                "personality": "사람들과 함께 일하는 걸 좋아하는 사람!"
+            }
+        ],
+        "pokemon": {
+            "name": "🌸 해피너스",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/242.png",
+            "description": "주변 사람들을 행복하게 만드는 포켓몬 😊"
+        }
+    },
+
+    "ISTP": {
+        "careers": [
+            {
+                "job": "🔧 엔지니어",
+                "major": "기계공학과",
+                "personality": "손으로 만드는 걸 좋아하는 사람!"
+            },
+            {
+                "job": "🚗 자동차 디자이너",
+                "major": "자동차공학과",
+                "personality": "실용적이고 관찰력이 좋은 사람!"
+            }
+        ],
+        "pokemon": {
+            "name": "⚙️ 핫삼",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/212.png",
+            "description": "조용하지만 실력 엄청난 냉철한 스타일 😎"
         }
     },
 
@@ -210,7 +297,7 @@ mbti_data = {
         "pokemon": {
             "name": "🍃 이상해씨",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-            "description": "차분하고 자연을 좋아하는 감성 포켓몬 🌿"
+            "description": "차분하고 자연을 사랑하는 감성러 🌿"
         }
     },
 
@@ -228,9 +315,9 @@ mbti_data = {
             }
         ],
         "pokemon": {
-            "name": "⚔️ 번치코",
+            "name": "🔥 번치코",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/257.png",
-            "description": "열정 넘치고 행동파 스타일 🔥"
+            "description": "열정 MAX! 행동파 스타일 🔥"
         }
     },
 
@@ -248,29 +335,29 @@ mbti_data = {
             }
         ],
         "pokemon": {
-            "name": "🌟 토게키스",
+            "name": "✨ 토게키스",
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/468.png",
-            "description": "행복 에너지 뿜뿜하는 인기쟁이 포켓몬 ✨"
+            "description": "행복 에너지 뿜뿜하는 인기쟁이 ✨"
         }
     }
 }
 
-# -----------------------------
+# -----------------------------------
 # MBTI 선택
-# -----------------------------
+# -----------------------------------
 selected_mbti = st.selectbox(
-    "🧐 너의 MBTI를 골라봐!",
+    "🧐 너의 MBTI를 선택해봐!",
     list(mbti_data.keys())
 )
 
-# -----------------------------
-# 버튼 클릭
-# -----------------------------
+# -----------------------------------
+# 결과 버튼
+# -----------------------------------
 if st.button("✨ 결과 보기"):
-    
+
     data = mbti_data[selected_mbti]
 
-    st.success(f"🎉 {selected_mbti} 유형 결과가 나왔어!")
+    st.success(f"🎉 {selected_mbti} 결과가 나왔어!")
 
     # -----------------------------
     # 진로 추천
@@ -291,7 +378,7 @@ if st.button("✨ 결과 보기"):
 
     pokemon = data["pokemon"]
 
-    st.image(pokemon["image"], width=200)
+    st.image(pokemon["image"], width=220)
 
     st.subheader(pokemon["name"])
 
@@ -299,8 +386,8 @@ if st.button("✨ 결과 보기"):
 
     st.balloons()
 
-# -----------------------------
+# -----------------------------------
 # 하단 문구
-# -----------------------------
+# -----------------------------------
 st.markdown("---")
 st.caption("💖 MBTI는 재미로 보는 거야! 가장 중요한 건 네가 좋아하는 일을 찾는 것 😎")
